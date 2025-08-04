@@ -1,5 +1,5 @@
 import { useReducer, useState } from "react";
-const initalState = { count: 0, steo: 1 };
+const initalState = { count: 0, step: 1 };
 
 function reducer(state, action) {
   console.log(state, action);
@@ -18,7 +18,7 @@ function reducer(state, action) {
       return { ...state, step: action.payload };
 
     case "reset":
-      return { count: 0, step: 1 };
+      return initalState;
 
     default:
       throw new Error("Unknow action");
