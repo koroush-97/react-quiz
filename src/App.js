@@ -7,6 +7,8 @@ import StartScreen from "./components/StartScreen";
 import Question from "./components/Question";
 import NextButton from "./components/NextButton";
 import Progress from "./components/Progress";
+import FinishScreen from "./components/FinishScreen";
+
 const initalState = {
   questions: [],
   status: "loading",
@@ -91,6 +93,8 @@ export default function App() {
             <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
+
+        {status === "finished" && <FinishScreen />}
       </Main>
     </div>
   );
