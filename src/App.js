@@ -26,7 +26,7 @@ function reducer(state, action) {
       return { ...state, status: "active" };
 
     case "newAnswer":
-      const question = state.question.at(state.index);
+      const question = state.questions.at(state.index);
 
       return {
         ...state,
@@ -38,7 +38,7 @@ function reducer(state, action) {
       };
 
     case "nextQuestion":
-      return { ...state, index: state.index + 1 };
+      return { ...state, index: state.index + 1, answer: null };
 
     default:
       throw new Error(" Action unkonwn ");
@@ -76,7 +76,7 @@ export default function App() {
               answer={answer}
             />
 
-            <NextButton dispatch={dispatch} />
+            <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
       </Main>
