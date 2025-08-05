@@ -11,6 +11,7 @@ const initalState = {
   status: "loading",
   index: 0,
   answer: null,
+  points: 0,
 };
 
 function reducer(state, action) {
@@ -25,14 +26,20 @@ function reducer(state, action) {
       return { ...state, status: "active" };
 
     case "newAnswer":
-      return { ...state, answer: action.payload };
+      const question = state.question.at(state.index);
+
+      return {
+        ...state,
+        answer: action.payload,
+        points: action.payload === question.correctOption,
+      };
 
     default:
       throw new Error(" Action unkonwn ");
   }
 }
 export default function App() {
-  const [{ questions, status, index, answer }, dispatch] = useReducer(
+  const [{ questions, status, index, answer, points }, dispatch] = useReducer(
     reducer,
     initalState
   );
