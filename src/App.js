@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from "react";
 import Header from "./Header";
 import Main from "./components/Main";
-import { type } from "@testing-library/user-event/dist/type";
+import Loader from "./Loader";
 
 const initalState = {
   questions: [],
@@ -21,7 +21,7 @@ function reducer(state, action) {
   }
 }
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initalState);
+  const [{ questions, status }, dispatch] = useReducer(reducer, initalState);
 
   useEffect(function () {
     fetch("http://localhost:8000/questions")
@@ -33,10 +33,7 @@ export default function App() {
   return (
     <div className="app">
       <Header />
-      <Main>
-        <p>1/15</p>
-        <p>Questions</p>
-      </Main>
+      <Main>{status === "loading" && <Loader />}</Main>
     </div>
   );
 }
