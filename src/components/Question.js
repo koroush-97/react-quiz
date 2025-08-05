@@ -1,6 +1,6 @@
 import Options from "./Options";
 
-export default function Question({ question }) {
+export default function Question({ question, answer, dispatch }) {
   console.log(question);
 
   return (
