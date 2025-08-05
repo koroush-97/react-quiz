@@ -1,4 +1,4 @@
-export default function StartScreen() {
+export default function StartScreen({ numQuestions }) {
   return (
     <div className="start">
       <h2>WelCome to The React Quiz!</h2>
