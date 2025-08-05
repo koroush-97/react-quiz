@@ -31,7 +31,10 @@ function reducer(state, action) {
       return {
         ...state,
         answer: action.payload,
-        points: action.payload === question.correctOption,
+        points:
+          action.payload === question.correctOption
+            ? state.points + 1
+            : state.points,
       };
 
     default:
