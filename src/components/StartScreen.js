@@ -1,8 +1,9 @@
 export default function StartScreen() {
   return (
-    <div>
+    <div className="start">
       <h2>WelCome to The React Quiz!</h2>
-      <p>X question to test your React mastery</p>
+      <h3>X question to test your React mastery</h3>
+      <button> Let's Start </button>
     </div>
   );
 }
