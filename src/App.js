@@ -10,6 +10,7 @@ const initalState = {
   questions: [],
   status: "loading",
   index: 0,
+  answer: null,
 };
 
 function reducer(state, action) {
@@ -22,6 +23,9 @@ function reducer(state, action) {
 
     case "start":
       return { ...state, status: "active" };
+
+    case "newAnswer":
+      return { ...state, answer: action.payload };
 
     default:
       throw new Error(" Action unkonwn ");
