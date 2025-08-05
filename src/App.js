@@ -94,7 +94,9 @@ export default function App() {
           </>
         )}
 
-        {status === "finished" && <FinishScreen />}
+        {status === "finished" && (
+          <FinishScreen maxPossiblePoints={maxPossiblePoints} points={points} />
+        )}
       </Main>
     </div>
   );
