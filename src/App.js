@@ -1,8 +1,8 @@
 import { useEffect, useReducer } from "react";
-import Header from "./Header";
+import Header from "./components/Header";
 import Main from "./components/Main";
-import Loader from "./Loader";
-import Error from "./Error";
+import Loader from "./components/Loader";
+import Error from "./components/Error";
 
 const initalState = {
   questions: [],
