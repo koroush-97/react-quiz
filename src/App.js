@@ -33,16 +33,19 @@ function reducer(state, action) {
         answer: action.payload,
         points:
           action.payload === question.correctOption
-            ? state.points + 1
+            ? state.points + question.points
             : state.points,
       };
+
+    case "nextQuestion":
+      return { ...state, index: state.index + 1 };
 
     default:
       throw new Error(" Action unkonwn ");
   }
 }
 export default function App() {
-  const [{ questions, status, index, answer, points }, dispatch] = useReducer(
+  const [{ questions, status, index, answer }, dispatch] = useReducer(
     reducer,
     initalState
   );
