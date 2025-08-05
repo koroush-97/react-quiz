@@ -37,6 +37,7 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
+        {status === "ready" && <Error />}
       </Main>
     </div>
   );
