@@ -53,7 +53,15 @@ function reducer(state, action) {
       };
 
     case "restart":
-      return { ...initalState, questions: state.question };
+      return { ...initalState, questions: state.questions, status: "ready" };
+    // return {
+    //   ...state,
+    //   points: 0,
+    //   highscore: 0,
+    //   index: 0,
+    //   answer: null,
+    //   status: "ready",
+    // };
     default:
       throw new Error(" Action unkonwn ");
   }
