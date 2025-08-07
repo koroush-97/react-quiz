@@ -106,7 +106,7 @@ export default function App() {
               dispatch={dispatch}
               answer={answer}
             />
-
+            <footer></footer>
             <NextButton
               dispatch={dispatch}
               answer={answer}
