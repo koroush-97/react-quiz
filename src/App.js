@@ -107,6 +107,7 @@ export default function App() {
               answer={answer}
             />
             <footer>
+              <Timer />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
