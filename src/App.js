@@ -47,7 +47,7 @@ function reducer(state, action) {
     case "finish":
       return {
         ...state,
-        state: "finished",
+        status: "finished",
         highscore:
           state.points > state.highscore ? state.points : state.highscore,
       };
