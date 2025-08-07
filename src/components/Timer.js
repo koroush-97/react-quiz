@@ -1,3 +1,3 @@
 export default function Timer() {
-  return <div>Timer</div>;
+  return <div className="timer">05:00</div>;
 }
