@@ -67,6 +67,10 @@ function reducer(state, action) {
     // };
 
     case "tick":
+      return {
+        ...state,
+        secondsRemaining: state.secondsRemaining - 1,
+      };
 
     default:
       throw new Error(" Action unkonwn ");
