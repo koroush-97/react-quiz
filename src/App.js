@@ -106,13 +106,14 @@ export default function App() {
               dispatch={dispatch}
               answer={answer}
             />
-            <footer></footer>
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuestions={numQuestions}
-            />
+            <footer>
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numQuestions}
+              />
+            </footer>
           </>
         )}
 
